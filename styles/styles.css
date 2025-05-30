@@ -14,12 +14,29 @@ body {
 }
 
 .countdown-container {
-  /* max-width: 600px; */
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
   margin: auto;
-  background: #fff;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  color: #fff; /* Ensures text contrasts well */
+  backdrop-filter: blur(0px); /* fallback for modern browsers */
+}
+
+.countdown-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/219988.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(2px);         /* Adjust blur intensity here */
+  z-index: -1;
+  transform: scale(1.1);     /* Prevent clipping at the edges */
 }
 
 #countdown {
@@ -55,4 +72,19 @@ body {
     min-width: 45px;
     padding: 0.4rem 0.6rem;
   }
+}
+
+.add-shadow{
+    box-shadow: 4px 5px 23px 1px rgba(0,0,0,0.41);
+  -webkit-box-shadow: 4px 5px 23px 1px rgba(0,0,0,0.41);
+  -moz-box-shadow: 4px 5px 23px 1px rgba(0,0,0,0.41);
+}
+
+.timer-custom{
+  margin: .5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.18); /* white with 80% opacity */
+}
+
+.btn-light-custom{
+  background-color: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
 }
