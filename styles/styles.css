@@ -68,3 +68,23 @@ body {
   color: #555;
   margin-top: 2px;
 }
+@media (max-width: 480px) {
+  .countdown-timer {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .countdown-timer span {
+    min-width: 50px;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .countdown-container {
+    padding: 0.8rem 0.3rem;
+  }
+
+  .countdown-label {
+    font-size: 0.9rem;
+  }
+}
