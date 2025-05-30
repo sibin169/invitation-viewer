@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Invitation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Fonts for modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles/styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
-<body>
+<body class="bg-light text-center">
 
-  <div class="invitation-wrapper">
-    <img src="invites/sibin/img/invite1img.jpg" alt="Invitation Page 1" class="invitation-image">
-    <img src="invites/sibin/img/invite2img.jpg" alt="Invitation Page 2" class="invitation-image">
+  <div class="container py-3">
+    <div class="invitation-wrapper mb-4">
+      <img src="invites/sibin/img/invite1img.jpg" alt="Invitation Page 1" class="img-fluid mb-3" />
+      <img src="invites/sibin/img/invite2img.jpg" alt="Invitation Page 2" class="img-fluid" />
+    </div>
+
+    <div class="countdown-container bg-white rounded shadow p-3">
+      <h5 class="text-primary mb-3">⏳ Countdown to the Event</h5>
+      <div id="countdown" class="d-flex justify-content-center gap-3 flex-wrap fs-5 fw-semibold text-dark mb-3">Loading...</div>
+
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a 
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Special+Event&dates=20250615T123000Z/20250615T153000Z&details=Join+us+for+a+special+event.&location=St+Mary's+Church,+Kerala&sf=true&output=xml"
+          class="btn btn-success"
+          target="_blank"
+        >
+          <i class="fas fa-calendar-plus me-1"></i> Add to Calendar
+        </a>
+
+        <a 
+          href="https://www.google.com/maps?q=St+Mary's+Church,+Kerala"
+          class="btn btn-danger"
+          target="_blank"
+        >
+          <i class="fas fa-map-marker-alt me-1"></i> View Location
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- Countdown Timer -->
-  <div class="countdown-container">
-    <p class="countdown-label">⏳ Countdown to the Event</p>
-    <div id="countdown" class="countdown-timer">Loading...</div>
-  </div>
-
-  <!-- Countdown Script -->
-  <script>
-    const targetDate = new Date("2025-06-15T18:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        countdownElement.innerHTML = "🎉 Event Started!";
-        clearInterval(timer);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      countdownElement.innerHTML = `
-        <span>${days} <small>days</small></span>
-        <span>${hours} <small>hrs</small></span>
-        <span>${minutes} <small>min</small></span>
-        <span>${seconds} <small>sec</small></span>
-      `;
-    }
-
-    const timer = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
+  <!-- Bootstrap JS (optional, for interactive components) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/countdown.js"></script>
 </body>
 </html>
+

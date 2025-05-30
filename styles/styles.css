@@ -1,90 +1,24 @@
-/* Reset & layout */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f5f5f5;
-}
-
-.invitation-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.invitation-image {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
-}
-
-/* Countdown styles */
 .countdown-container {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0.5rem;
-  text-align: center;
-  z-index: 1000;
+  max-width: 600px;
+  margin: auto;
 }
 
-.countdown-label {
-  margin: 0;
-  font-size: 1rem;
-  color: #666;
-  font-weight: 500;
-}
-
-.countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 0.5rem;
-}
-
-.countdown-timer span {
-  background: #e0f2f1;
+#countdown span {
+  background-color: #f1f1f1;
+  border-radius: 8px;
   padding: 0.4rem 0.8rem;
-  border-radius: 10px;
   min-width: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
 }
 
-.countdown-timer span small {
-  font-size: 0.7rem;
-  font-weight: 400;
+#countdown small {
+  display: block;
+  font-size: 0.75rem;
   color: #555;
-  margin-top: 2px;
 }
-@media (max-width: 480px) {
-  .countdown-timer {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    font-size: 1rem;
-  }
 
-  .countdown-timer span {
-    min-width: 50px;
+@media (max-width: 576px) {
+  #countdown span {
     padding: 0.3rem 0.6rem;
-  }
-
-  .countdown-container {
-    padding: 0.8rem 0.3rem;
-  }
-
-  .countdown-label {
-    font-size: 0.9rem;
+    min-width: 50px;
   }
 }
