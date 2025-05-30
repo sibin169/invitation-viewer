@@ -20,6 +20,28 @@
   <link rel="stylesheet" href="styles/googlefont.css" />
 </head>
 <body class="bg-light text-center">
+  <audio id="background-audio" src="sounds/intelligent-life-tranquil-mindful-60-sec-243559.mp3" autoplay loop></audio>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('background-audio');
+    audio.volume = 0.05; // Set volume to 30%
+
+    // Try to autoplay
+    const playPromise = audio.play();
+
+    // Fallback: play after user taps anywhere
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        const unlock = () => {
+          audio.play();
+          document.body.removeEventListener('click', unlock);
+        };
+        document.body.addEventListener('click', unlock);
+      });
+    }
+  });
+</script>
 
   <div class="container py-3">
     <div class="invitation-wrapper mb-4 rounded shadow">
