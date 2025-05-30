@@ -14,7 +14,7 @@ body {
 }
 
 .countdown-container {
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: auto;
   background: #fff;
   border-radius: 12px;
