@@ -94,7 +94,11 @@ body {
   text-align: center;
   margin-top: 30px;
   padding-top: 10px;
-  opacity: 46%;
+
+}
+
+.footer-design > * {
+  padding: 5px 10px; /* You can adjust values as needed */
 }
 
 .invite-buttons{
