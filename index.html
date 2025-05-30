@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>Invitation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Link to external CSS -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -11,8 +16,44 @@
   <div class="invitation-wrapper">
     <img src="invites/sibin/img/invite1img.jpg" alt="Invitation Page 1" class="invitation-image">
     <img src="invites/sibin/img/invite2img.jpg" alt="Invitation Page 2" class="invitation-image">
-    <!-- Add more pages if needed -->
   </div>
 
+  <!-- Countdown Timer -->
+  <div class="countdown-container">
+    <p class="countdown-label">⏳ Countdown to the Event</p>
+    <div id="countdown" class="countdown-timer">Loading...</div>
+  </div>
+
+  <!-- Countdown Script -->
+  <script>
+    const targetDate = new Date("2025-06-15T18:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownElement.innerHTML = "🎉 Event Started!";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdownElement.innerHTML = `
+        <span>${days} <small>days</small></span>
+        <span>${hours} <small>hrs</small></span>
+        <span>${minutes} <small>min</small></span>
+        <span>${seconds} <small>sec</small></span>
+      `;
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
