@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+.invitation-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.invitation-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}

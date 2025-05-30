@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.pdf-embed {
+  width: 100%;
+  height: auto;
+  border: none;
+  display: block;
+}
+.pdf-embed-container {
+  position: relative;
+  width: 100%;
+}
