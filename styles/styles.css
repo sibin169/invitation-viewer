@@ -95,3 +95,7 @@ body {
   margin-top: 30px;
   padding-top: 10px;
 }
+
+.invite-buttons{
+    padding: 0.5rem 1rem;
+}

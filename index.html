@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -20,28 +22,7 @@
   <link rel="stylesheet" href="styles/googlefont.css" />
 </head>
 <body class="bg-light text-center">
-  <audio id="background-audio" src="sounds/intelligent-life-tranquil-mindful-60-sec-243559.mp3" autoplay loop></audio>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const audio = document.getElementById('background-audio');
-    audio.volume = 0.05; // Set volume to 30%
 
-    // Try to autoplay
-    const playPromise = audio.play();
-
-    // Fallback: play after user taps anywhere
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        const unlock = () => {
-          audio.play();
-          document.body.removeEventListener('click', unlock);
-        };
-        document.body.addEventListener('click', unlock);
-      });
-    }
-  });
-</script>
 
   <div class="container py-3">
     <div class="invitation-wrapper mb-4 rounded shadow">
@@ -52,8 +33,8 @@
     <div class="countdown-container bg-white rounded shadow p-3">
       <div class="row g-2 invite-buttons">
         <div class="col-12">
-          <a href="https://maps.app.goo.gl/P7o75jqrQj9LWgRX8" class="btn btn-light w-100 btn-light-custom" target="_blank">
-            <i class="fas fa-map-marker-alt me-1"></i> Get Directions
+          <a href="https://maps.app.goo.gl/P7o75jqrQj9LWgRX8" class="btn btn-light w-100 btn-light-custom pt-sans-regular" target="_blank">
+            <i class="fas fa-map-marker-alt me-1"></i> Navigate to Our Venue
           </a>
         </div>
       </div>
@@ -62,14 +43,14 @@
         <div class="col-12">
           <h5 class="delicious-handrawn-regular mb-3  text-muted ">Counting Down to the Divine Moment...</h5>
           <div id="countdown" class="d-flex justify-content-center gap-3 flex-wrap fs-5 fw-semibold text-dark mb-3">Loading...</div>
-          <div class="delicious-handrawn-regular text-muted ">Join us in celebrating this special occasion!</div>
+          <div class="delicious-handrawn-regular text-muted ">Let’s make memories together on this joyous occasion!</div>
         </div>
       </div>
 
       <div class="row g-2 invite-buttons">
         <div class="col-12">
-          <a href="https://calendar.app.google/JsjvWZybmLfZ4hzP6" class="btn btn-light w-100 btn-light-custom" target="_blank">
-            <i class="fas fa-calendar-plus me-1"></i> Add Event to your Calendar
+          <a href="https://calendar.app.google/JsjvWZybmLfZ4hzP6" class="btn btn-light w-100 btn-light-custom pt-sans-regular" target="_blank">
+            <i class="fas fa-calendar-plus me-1"></i> Don't Miss the Moment – Add to Calendar
           </a>
         </div>
       </div>
